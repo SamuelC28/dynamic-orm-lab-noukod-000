@@ -53,7 +53,7 @@ class InteractiveRecord
   end
 
   def self.find_by **column_names
-    sql = "SELECT * FROM #{table_name} WHERE #{column_names.keys[0]} = ? LIMIT 1"
-    DB[:conn].execute(sql,column_names.values[0])
+    sql = "SELECT * FROM #{table_name} WHERE #{column_names.keys} = ? LIMIT 1"
+    DB[:conn].execute(sql,column_names.values)
   end
 end
